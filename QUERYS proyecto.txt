@@ -1,0 +1,14 @@
+SELECT client_id
+FROM clients
+WHERE city = 'Monterrey'
+
+
+SELECT product_id, descr
+FROM products
+WHERE price < '15'
+
+SELECT first_name FROM clients WHERE clients.client_id IN (
+SELECT client_id FROM orders WHERE orders.order_id IN (
+SELECT order_id
+FROM sales
+WHERE quantity > '10'))
